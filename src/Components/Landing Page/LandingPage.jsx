@@ -2,7 +2,28 @@ import React from 'react'
 import "./style.css"
 import NavBar from '../NavBar/NavBar'
 import Img from "../../images/img1.jpeg"
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 const LandingPage = () => {
+
+    useGSAP(()=>{
+        gsap.from(" h1 ,h6" ,{
+         y:100,
+         skewY:10,
+         duration:.8,
+         opacity:0,
+        })
+       })
+
+       useGSAP(()=>{
+        gsap.from(".col-2 img" , {
+         x:200,
+         y:100,
+         skewY:20,
+         duration:.8,
+         opacity:0,
+        })
+       })
   return (
     <div className='landing-page'>
           <NavBar/>

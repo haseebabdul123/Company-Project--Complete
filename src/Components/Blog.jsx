@@ -2,8 +2,19 @@ import React from 'react'
 import NavBar from './NavBar/NavBar'
 import "../Components/blogStyle.css"
 import { BlogPage} from './data/data'
-
+import { useGSAP } from "@gsap/react";
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import gsap from 'gsap'
 const Blog = () => {
+  useGSAP(()=>{
+    gsap.from(".wrapper .single-card-3" ,{
+      y:-300,
+      skewY:20,
+      overflowX:"hidden",
+      duration:.8,
+      opacity:0,
+    })
+   })
   return (
     <div>
       <NavBar/>
